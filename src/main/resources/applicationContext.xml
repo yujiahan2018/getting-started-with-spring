@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="mockBO1" class="org.example.MockBusinessObject1" >
+        <constructor-arg type="int">
+            <value>111111</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="mockBO2" class="org.example.MockBusinessObject2">
+        <constructor-arg index="1" value="11111"/>
+        <constructor-arg index="0" value="22222"/>
+    </bean>
+
+    <!-- name属性是set方法的名字 -->
+    <!-- 请尝试将”dependency3“修改为”dependency1”,同时注意观察对应类set方法的变化(为保险起见,请勿修改对应类中的set方法) -->
+    <bean id="mockBO3" class="org.example.MockBusinessObject3">
+        <property name="dependency3" value="2222"/>
+    </bean>
+
+    <bean id="mockBO4" class="org.example.MockBusinessObject4">
+        <constructor-arg value="11111"/>
+        <property name="dependency4" value="22222"/>
+    </bean>
+
+</beans>
