@@ -1,28 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-    <bean id="mockBO1" class="org.ioc.MockBusinessObject1" >
-        <constructor-arg type="int">
-            <value>111111</value>
-        </constructor-arg>
-    </bean>
-
-    <bean id="mockBO2" class="org.ioc.MockBusinessObject2">
-        <constructor-arg index="1" value="11111"/>
-        <constructor-arg index="0" value="22222"/>
-    </bean>
-
-    <!-- nameÂ±ûÊÄßÊòØsetÊñπÊ≥ïÁöÑÂêçÂ≠ó -->
-    <!-- ËØ∑Â∞ùËØïÂ∞Ü‚Äùdependency3‚Äú‰øÆÊîπ‰∏∫‚Äùdependency1‚Äù,ÂêåÊó∂Ê≥®ÊÑèËßÇÂØüÂØπÂ∫îÁ±ªsetÊñπÊ≥ïÁöÑÂèòÂåñ(‰∏∫‰øùÈô©Ëµ∑ËßÅ,ËØ∑Âãø‰øÆÊîπÂØπÂ∫îÁ±ª‰∏≠ÁöÑsetÊñπÊ≥ï) -->
-    <bean id="mockBO3" class="org.ioc.MockBusinessObject3">
-        <property name="dependency3" value="2222"/>
-    </bean>
-
-    <bean id="mockBO4" class="org.ioc.MockBusinessObject4">
-        <constructor-arg value="11111"/>
-        <property name="dependency4" value="22222"/>
-    </bean>
-
-</beans>
+<?xml version="1.0" encoding="GBK"?>
+<º∆À„ª˙ ÈºÆ¡–±Ì>
+    < È>
+        < È√˚>∑ËøÒJavaΩ≤“Â</ È√˚>
+        <◊˜’ﬂ>¿Ó∏’</◊˜’ﬂ>
+    </ È>
+    < È>
+        < È√˚>«·¡øº∂Java EE∆Û“µ”¶”√ µ’Ω</ È√˚>
+        <◊˜’ﬂ>¿Ó∏’</◊˜’ﬂ>
+    </ È>
+</º∆À„ª˙ ÈºÆ¡–±Ì>
