@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="ho" class="HouseOwner"/>
+    <bean id="ls" class="LogStart"/>
+    <bean id="le" class="LogEnd"/>
+
+    <aop:config>
+        <!--切入点:公共业务需要切入进哪些方法(或类)上-->
+        <aop:pointcut id="pointcut" expression="execution(* HouseOwner.sell())"/>
+
+        <!--关注点:我要用哪些公共的业务【关注点-连接-写入点】-->
+        <aop:advisor advice-ref="ls" pointcut-ref="pointcut"/>
+        <aop:advisor advice-ref="le" pointcut-ref="pointcut"/>
+    </aop:config>
+
+
+</beans>
