@@ -1,0 +1,26 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- this is the object that will be proxied by Spring's AOP infrastructure -->
+    <bean id="personService" class="DefaultPersonService"/>
+
+
+    <!-- this is the actual advice itself -->
+    <bean id="profiler" class="SimpleProfiler"/>
+
+    <aop:config>
+        <aop:aspect ref="profiler">
+
+            <aop:pointcut id="SomePersonServiceMethod"
+                          expression="execution(* getPerson(String))
+                and args(name)"/>
+            <aop:before pointcut-ref="SomePersonServiceMethod"
+                        method="profile"/>
+
+        </aop:aspect>
+    </aop:config>
+</beans>
